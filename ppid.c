@@ -5,7 +5,7 @@
 int
 main(void)
 {
-  printf("pid: %d -> ppid: %d\n", getpid(), getppid());
+  printf(1, "pid: %d -> ppid: %d\n", getpid(), getppid());
 
   exit();		
 }
