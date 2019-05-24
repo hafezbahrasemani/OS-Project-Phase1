@@ -6,7 +6,7 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
-#include <time.h>
+
 
 struct {
   struct spinlock lock;
@@ -89,7 +89,12 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
-
+  
+  //including times...	
+  p->ctime = ticks;	
+  p->rtime = 0;	
+  p->etime = 0;	
+  
   release(&ptable.lock);
 
   // Allocate kernel stack.
