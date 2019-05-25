@@ -71,6 +71,11 @@ QEMU = $(shell if which qemu > /dev/null; \
 	echo "***" 1>&2; exit 1)
 endif
 
+#Default scheduling police
+ifndef SCHEDFLAG
+SCHEDFLAG := RR
+endif 
+
 CC = $(TOOLPREFIX)gcc
 AS = $(TOOLPREFIX)gas
 LD = $(TOOLPREFIX)ld
