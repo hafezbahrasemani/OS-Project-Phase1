@@ -95,3 +95,17 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//getPerformanceData
+int
+sys_getPerformanceData()
+{
+    int *rtime, *wtime;
+    	    	
+    if(argptr(0, (void *)&rtime, sizeof(rtime)) < 0)
+	return -1;
+    if(argptr(1, (void *)&wtime, sizeof(wtime)) < 0)
+	return -1;
+    
+    return getPerformanceData(wtime, rtime); 		
+}
