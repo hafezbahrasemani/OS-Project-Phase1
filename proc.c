@@ -354,9 +354,9 @@ getPerformanceData(int *wtime, int *rtime)
         p->state = UNUSED;
 	
 	//making them zero
-	p->ctime = 0;
-	p->rtime = 0;
-	p->etime = 0;	
+	//p->ctime = 0;
+	//p->rtime = 0;
+	//p->etime = 0;	
         
 	release(&ptable.lock);
         return pid;
